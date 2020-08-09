@@ -13,6 +13,18 @@ async function validaUsuario(ux, px){
     consumeServicio('POST', data, CONSULTAUSUARIO, llenaUsuario);
 }
 
+function statusChangeCallback(response){
+    
+/* {
+    status: 'connected',
+    authResponse: {
+        accessToken: '...',
+        expiresIn:'...',
+        signedRequest:'...',
+        userID:'...'
+    }
+} */
+}
 
 function llenaUsuario(usrjson){
     localStorage.setItem("usuario", JSON.stringify(usrjson));
