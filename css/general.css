@@ -1,0 +1,139 @@
+html,
+body {
+  height: 100%;
+}
+body {
+  padding-top: 100px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+  font-family: "Open Sans", sans-serif !important;
+  font-size: 14px;
+}
+a:hover {
+  text-decoration: none;
+}
+/* Transition for Hover & Focus states */
+a,
+a:hover,
+.trsn,
+.trsn:hover,
+.trsn:focus,
+input.text,
+input.text:focus,
+button.trsn:hover,
+select.select,
+select.select:hover {
+  text-decoration: none !important;
+  -webkit-transition: all 0.2s linear !important;
+  -moz-transition: all 0.2s linear !important;
+  -ms-transition: all 0.2s linear !important;
+  -o-transition: all 0.2s linear !important;
+  transition: all 0.2s linear !important;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #222;
+}
+
+h2 {
+  font-size: 1.75em !important;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+.breadcrumb {
+  margin-top: 30px;
+  background: #f5f5f5;
+}
+
+.page-header {
+  padding-bottom: 9px;
+  margin: 40px 0 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.page p:empty {
+  min-height: 1.5em;
+}
+
+.page ol {
+  list-style: decimal;
+}
+.page ul {
+  list-style: disc;
+}
+
+.store-image {
+  margin: 0 0 0 1rem;
+  height: 50px;
+}
+.product-block-description {
+  height: 90px;
+  overflow: hidden;
+}
+
+.product-block-description p:empty {
+  min-height: 1.5em;
+}
+
+.product-block .caption {
+  min-height: 150px;
+}
+
+.product-block .caption h3,
+.product-block .caption .price-mob {
+  font-size: 0.95rem;
+}
+.no-label {
+  padding-top: 20px !important;
+  padding-bottom: 20px !important;
+}
+
+figure img {
+  width: 100%;
+  height: auto;
+  margin: 1em 0;
+}
+
+.badge {
+  padding-left: 9px;
+  padding-right: 9px;
+  -webkit-border-radius: 9px;
+  -moz-border-radius: 9px;
+  border-radius: 9px;
+}
+
+.label-warning[href],
+.badge-warning[href] {
+  background-color: #c67605;
+}
+#lblCartCount {
+  font-size: 12px;
+  background: #ff0000;
+  color: #fff;
+  padding: 0 5px;
+  vertical-align: top;
+  margin-left: -10px;
+}
+
+.addRemove :hover {
+  cursor: pointer;
+}
+
+.crashRemove {
+  color: red;
+  font-size: 20px;
+}
+#mapCanvas{
+  width: 100%;
+  height: 400px;
+}
+
+#mapCanvasDetalle{
+  width: 100%;
+  height: 400px;
+}

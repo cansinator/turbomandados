@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/general.css">
+    <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.css">
+</head>
+
+<body>
+    <nav id="header" class="navbar navbar-expand-lg fixed-top navbar-light bg-light"></nav>
+    <div id="main" class="container">
+        <div class="row">
+            <div class="col-12">
+                <h2 class="page-header">Ubicación de entrega</h2>
+            </div>
+            <div id="mapCanvas"></div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <h2 class="page-header">Datos del cliente</h2>
+            </div>
+
+        </div>
+        <div class="container mt-3">
+            <div id="alerta" style="display: none;" class="alert alert-warning alert-dismissible">
+                <button type="button" class="close">×</button>
+                <strong>Alerta!</strong> Debes completar todos los datos.
+            </div>
+            <form>
+                <div class="input-group mb-3 input-group-sm">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text fa fa-user"></span>
+                    </div>
+                    <input id="nombreCliente" type="text" class="form-control" placeholder="Nombre">
+                    <div class="input-group-append">
+                        <button class="btn btn-primary" id="usuarioRegistrado" type="button">Usar Usuario
+                            Registrado</button>
+                    </div>
+                </div>
+                <div class="input-group mb-3 input-group-sm">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text fa fa-user"></span>
+                    </div>
+                    <input id="apellidos" type="text" class="form-control" placeholder="Apellidos">
+                </div>
+                <div class="input-group mb-3 input-group-sm">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text fa fa-map-marker"></span>
+                    </div>
+                    <input id="calle" type="text" class="form-control" placeholder="Calle, Número">
+                </div>
+                <div class="input-group mb-3 input-group-sm">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text fa fa-map-marker"></span>
+                    </div>
+                    <input id="referencias" type="text" class="form-control" placeholder="Referencias">
+                </div>
+                <div class="input-group mb-3 input-group-sm">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text fa fa-phone"></span>
+                    </div>
+                    <input id="telefono" type="text" class="form-control" placeholder="Celular">
+                </div>
+                <div class="row">
+                    <div class="col-sm-4"></div>
+                    <div class="col-sm-4">
+                        <button id="confirmar" type="button" class="btn btn-danger btn-sm">Confirmar</button>
+                    </div>
+                    <div class="col-sm-4"></div>
+                </div>
+            </form>
+        </div>
+        <h2 class="page-header"></h2>
+    </div>
+    </div>
+    <nav id="footer" class="navbar navbar-expand-lg fixed-bottom navbar-light bg-light"></nav>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="js/utilidades/template.js"></script>
+    <script>configuraTemplate(4);</script>
+    <script src="js/utilidades/constantes.js"></script>
+    <script src="js/utilidades/util.js"></script>
+    <script src="js/datosentrega.js"></script>
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDjZ_ekZXiQ5m1xCmr77GSio2Qq6WOVT8Q&callback=initMap"></script>
+</body>
+
+</html>
