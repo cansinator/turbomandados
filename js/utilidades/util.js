@@ -33,14 +33,10 @@ function sumaCarrito(carrito) {
 }
 
 $('#cerrarSession').click(function () {
-
   FB.logout(function(response) {
-    // user is now logged out
+    localStorage.clear();
+    window.location.href = "index.html"
   });
-
-  
-  localStorage.clear();
-  window.location.href = "index.html"
 });
 
 function creaCarritoXML(carrito, usuario) {
