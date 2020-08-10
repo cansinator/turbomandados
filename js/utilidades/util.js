@@ -77,5 +77,34 @@ function creaCarritoXML(carrito, usuario) {
   prd = xmlItem2 + prd + xmlItem2ierre;
 
   return xmlContenedor + cliente + prd + xmlContenedorCierre;
-
 }
+
+function statusChangeCallback(response) {
+  console.log('statusChangeCallback');
+  console.log(response);
+  if (response.status === 'connected') {
+      userValidation();
+  } else {
+  }
+}
+
+function checkLoginState() {
+  FB.getLoginStatus(function (response) {
+      statusChangeCallback(response);
+  });
+}
+
+
+window.fbAsyncInit = function () {
+  FB.init({
+      appId: APIFBID,
+      cookie: true,
+      xfbml: true,
+      version: VERSION
+  });
+
+
+  FB.getLoginStatus(function (response) {
+      statusChangeCallback(response);
+  });
+};
