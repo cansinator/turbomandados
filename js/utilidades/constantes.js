@@ -17,3 +17,5 @@ const CONSULTACOMPRAS = 'https://marketingtux.com/turbomandadosservicios/compras
 const CONSULTAPRODUCTOSCARRITO = 'https://marketingtux.com/turbomandadosservicios/productoscarrito/post.php';
 const ACTUALIZACARRITOCOMPRA = 'https://marketingtux.com/turbomandadosservicios/repartidor/post.php';
 const TOKEN = 'https://marketingtux.com/turbomandadosservicios/token/post.php';
+const APIFBID = '3033889303406454';
+const VERSION = 'v8.0';

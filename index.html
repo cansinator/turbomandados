@@ -31,26 +31,6 @@
 	<script async defer crossorigin="anonymous"
 		src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v8.0&appId=3033889303406454&autoLogAppEvents=1"
 		nonce="3lVqByil"></script>
-	<script>
-		window.fbAsyncInit = function () {
-			FB.init({
-				appId: '3033889303406454',
-				cookie: true,
-				xfbml: true,
-				version: '8.0'
-			});
-
-			FB.AppEvents.logPageView();
-
-		};
-		(function (d, s, id) {
-			var js, fjs = d.getElementsByTagName(s)[0];
-			if (d.getElementById(id)) { return; }
-			js = d.createElement(s); js.id = id;
-			js.src = "https://connect.facebook.net/en_US/sdk.js";
-			fjs.parentNode.insertBefore(js, fjs);
-		}(document, 'script', 'facebook-jssdk'));
-	</script>
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100 p-l-50 p-r-50 p-t-77 p-b-30">
@@ -78,9 +58,8 @@
 						</label>
 					</div>
 					<div class="text-center w-full p-t-42 p-b-22">
-						<div class="fb-login-button" data-size="large" data-button-type="continue_with"
-							data-layout="default" data-auto-logout-link="false" data-use-continue-as="false"
-							data-width=""></div>
+						<fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+						</fb:login-button>
 					</div>
 					<div class="text-center w-full p-t-115">
 						<span class="txt1">
