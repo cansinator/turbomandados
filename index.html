@@ -27,10 +27,49 @@
 </head>
 
 <body>
-	<div id="fb-root"></div>
-	<script async defer crossorigin="anonymous"
-		src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v8.0&appId=3033889303406454&autoLogAppEvents=1"
-		nonce="3lVqByil"></script>
+	<script>
+		function statusChangeCallback(response) {
+			console.log('statusChangeCallback');
+			console.log(response);
+			if (response.status === 'connected') {
+				userValidation();
+			} else {
+			}
+		}
+
+		function checkLoginState() {
+			FB.getLoginStatus(function (response) {
+				statusChangeCallback(response);
+			});
+		}
+
+
+		window.fbAsyncInit = function () {
+			FB.init({
+				appId: APIFBID,
+				cookie: true,
+				xfbml: true,
+				version: VERSION
+			});
+
+
+			FB.getLoginStatus(function (response) {
+				statusChangeCallback(response);
+			});
+		};
+
+		function userValidation() {
+			FB.api('/me', function (response) {
+				let data = {
+					'UX': '',
+					'PX': '',
+					'FB': response.id,
+					'NFB': response.name
+				};
+				consumeServicio('POST', data, CONSULTAUSUARIO, llenaUsuario);
+			});
+		}
+	</script>
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100 p-l-50 p-r-50 p-t-77 p-b-30">
@@ -91,6 +130,7 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/4.9.1/firebase.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/4.9.1/firebase-messaging.js"></script>
+	<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
 </body>
 
 </html>
