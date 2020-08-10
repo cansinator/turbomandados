@@ -12,6 +12,37 @@
 </head>
 
 <body>
+    <script>
+        function statusChangeCallback(response) {
+            console.log('statusChangeCallback');
+            console.log(response);
+            if (response.status === 'connected') {
+                userValidation();
+            } else {
+            }
+        }
+
+        function checkLoginState() {
+            FB.getLoginStatus(function (response) {
+                statusChangeCallback(response);
+            });
+        }
+
+
+        window.fbAsyncInit = function () {
+            FB.init({
+                appId: APIFBID,
+                cookie: true,
+                xfbml: true,
+                version: VERSION
+            });
+
+
+            FB.getLoginStatus(function (response) {
+                statusChangeCallback(response);
+            });
+        };
+    </script>
     <nav id="header" class="navbar navbar-expand-lg fixed-top navbar-light bg-light"></nav>
     <div id="main" class="container">
         <div class="row">

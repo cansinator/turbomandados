@@ -12,6 +12,37 @@
 </head>
 
 <body>
+    <script>
+        function statusChangeCallback(response) {
+            console.log('statusChangeCallback');
+            console.log(response);
+            if (response.status === 'connected') {
+                userValidation();
+            } else {
+            }
+        }
+
+        function checkLoginState() {
+            FB.getLoginStatus(function (response) {
+                statusChangeCallback(response);
+            });
+        }
+
+
+        window.fbAsyncInit = function () {
+            FB.init({
+                appId: APIFBID,
+                cookie: true,
+                xfbml: true,
+                version: VERSION
+            });
+
+
+            FB.getLoginStatus(function (response) {
+                statusChangeCallback(response);
+            });
+        };
+    </script>
     <nav id="header" class="navbar navbar-expand-lg fixed-top navbar-light bg-light"></nav>
     <div class="container">
         <div class="row">
@@ -32,7 +63,7 @@
     <script src="js/utilidades/util.js"></script>
     <script src="js/tienda.js"></script>
     <script src="js/tiendas/tiendas.js"></script>
-	<script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_LA/sdk.js"></script>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_LA/sdk.js"></script>
 </body>
 
 </html>
