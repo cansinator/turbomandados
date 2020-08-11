@@ -1,4 +1,4 @@
-importScripts('https://www.gstatic.com/firebasejs/4.9.1/firebase-app.js')
+importScripts('js/firebase-app.js')
 importScripts('js/firebase-messaging.js')
 importScripts('js/sw-utils.js');
 
@@ -57,7 +57,8 @@ const APP_SHELL = [
   'js/compras.js',
   'js/datosentrega.js',
   'js/firebase-messaging.js',
-  'js/firebase.js'
+  'js/firebase.js',
+  'js/firebase-app.js'
 ];
 
 const APP_SHELL_INMUTABLE = [
