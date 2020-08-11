@@ -35,9 +35,7 @@ function sumaCarrito(carrito) {
 $('#cerrarSession').click(function () {
   FB.logout(function (response) {
     localStorage.clear();
-
-    if (location.pathname.split("/").slice(-1) != "index.html")
-      window.location.href = "index.html"
+    window.location.href = "index.html"
   });
 });
 
@@ -88,7 +86,8 @@ function statusChangeCallback(response) {
     console.log(response);
   } else {
     localStorage.clear();
-    window.location.href = "index.html"
+    if (location.pathname.split("/").slice(-1) != "index.html")
+      window.location.href = "index.html"
   }
 }
 
