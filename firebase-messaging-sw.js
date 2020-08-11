@@ -56,7 +56,8 @@ const APP_SHELL = [
   'js/carrito.js',
   'js/compras.js',
   'js/datosentrega.js',
-  'js/firebase-messaging.js'
+  'js/firebase-messaging.js',
+  'js/firebase.js'
 ];
 
 const APP_SHELL_INMUTABLE = [
