@@ -33,7 +33,7 @@ function sumaCarrito(carrito) {
 }
 
 $('#cerrarSession').click(function () {
-  FB.logout(function(response) {
+  FB.logout(function (response) {
     localStorage.clear();
     window.location.href = "index.html"
   });
@@ -83,28 +83,30 @@ function statusChangeCallback(response) {
   console.log('statusChangeCallback');
   console.log(response);
   if (response.status === 'connected') {
-      userValidation();
+    console.log(response);
   } else {
+    localStorage.clear();
+    window.location.href = "index.html"
   }
 }
 
 function checkLoginState() {
   FB.getLoginStatus(function (response) {
-      statusChangeCallback(response);
+    statusChangeCallback(response);
   });
 }
 
 
 window.fbAsyncInit = function () {
   FB.init({
-      appId: APIFBID,
-      cookie: true,
-      xfbml: true,
-      version: VERSION
+    appId: APIFBID,
+    cookie: true,
+    xfbml: true,
+    version: VERSION
   });
 
 
   FB.getLoginStatus(function (response) {
-      statusChangeCallback(response);
+    statusChangeCallback(response);
   });
 };
