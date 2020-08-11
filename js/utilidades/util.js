@@ -83,7 +83,8 @@ function statusChangeCallback(response) {
   console.log('statusChangeCallback');
   console.log(response);
   if (response.status === 'connected') {
-    console.log(response);
+    if (location.pathname.split("/").slice(-1) == "index.html")
+      userValidation();
   } else {
     localStorage.clear();
     if (location.pathname.split("/").slice(-1) != "index.html")
