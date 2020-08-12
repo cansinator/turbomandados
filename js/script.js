@@ -6,32 +6,32 @@ firebase.initializeApp(config);
 const messaging = firebase.messaging();
 
 navigator.serviceWorker.register('https://cansinator.github.io/turbomandados/firebase-messaging-sw.js')
-.then((registration) => {
-  messaging.useServiceWorker(registration);
+  .then(registration => {
+    messaging.useServiceWorker(registration);
 
-  messaging.requestPermission()
-  .then(function () {
-    console.log('Notification permission granted.');
-    messaging.getToken()
-      .then(function (currentToken) {
-        if (currentToken) {
-          console.log('Token: ' + currentToken);
-          sendTokenToServer(currentToken);
-        } else {
-          console.log('No Instance ID token available. Request permission to generate one.');
-          setTokenSentToServer(false);
-        }
+    messaging.requestPermission()
+      .then(function () {
+        console.log('Notification permission granted.');
+        messaging.getToken()
+          .then(function (currentToken) {
+            if (currentToken) {
+              console.log('Token: ' + currentToken);
+              sendTokenToServer(currentToken);
+            } else {
+              console.log('No Instance ID token available. Request permission to generate one.');
+              setTokenSentToServer(false);
+            }
+          })
+          .catch(function (err) {
+            console.log('An error occurred while retrieving token. ', err);
+            setTokenSentToServer(false);
+          });
       })
       .catch(function (err) {
-        console.log('An error occurred while retrieving token. ', err);
-        setTokenSentToServer(false);
+        console.log('Unable to get permission to notify.', err);
       });
-  })
-  .catch(function (err) {
-    console.log('Unable to get permission to notify.', err);
-  });
 
-});
+  });
 
 // Request for permission
 
