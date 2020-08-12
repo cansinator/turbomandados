@@ -17,7 +17,7 @@ messaging.requestPermission()
           console.log('Token: ' + currentToken)
           sendTokenToServer(currentToken);
 
-          navigator.serviceWorker.register('../turbomandados/firebase-messaging-sw.js')
+          navigator.serviceWorker.register('~/turbomandados/firebase-messaging-sw.js')
             .then((registration) => {
               messaging.useServiceWorker(registration);
             });
