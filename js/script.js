@@ -7,8 +7,9 @@ const messaging = firebase.messaging();
 
 navigator.serviceWorker.register('https://cansinator.github.io/turbomandados/firebase-messaging-sw.js')
   .then(registration => {
-    messaging.useServiceWorker(registration).then(function() {
-      messaging.requestPermission()
+    messaging.useServiceWorker(registration)
+    
+    messaging.requestPermission()
       .then(function () {
         console.log('Notification permission granted.');
         messaging.getToken()
@@ -28,8 +29,7 @@ navigator.serviceWorker.register('https://cansinator.github.io/turbomandados/fir
       })
       .catch(function (err) {
         console.log('Unable to get permission to notify.', err);
-      })
-    });
+      });
 
   });
 
