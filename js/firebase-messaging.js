@@ -905,8 +905,8 @@ createNewMsg: createNewMsg
 */
 
 /* harmony default export */ var default_sw = ({
-path: 'firebase-messaging-sw.js',
-scope: 'firebase-cloud-messaging-push-scope'
+path: '../turbomandados/firebase-messaging-sw.js',
+scope: '../turbomandados/firebase-cloud-messaging-push-scope'
 });
 
 //# sourceMappingURL=default-sw.js.map
