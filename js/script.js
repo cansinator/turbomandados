@@ -10,6 +10,7 @@ navigator.serviceWorker.register('../turbomandados/firebase-messaging-sw.js')
     messaging.useServiceWorker(registration);
   });
 
+  
 
 // Request for permission
 messaging.requestPermission()
