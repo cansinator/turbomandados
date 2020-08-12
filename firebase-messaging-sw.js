@@ -55,10 +55,7 @@ const APP_SHELL = [
   'img/tiendas/turbomandados.jpg',
   'js/carrito.js',
   'js/compras.js',
-  'js/datosentrega.js',
-  'js/firebase-messaging.js',
-  'js/firebase.js',
-  'js/firebase-app.js'
+  'js/datosentrega.js'
 ];
 
 const APP_SHELL_INMUTABLE = [
