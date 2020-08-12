@@ -5,7 +5,7 @@ var config = {
 firebase.initializeApp(config);
 const messaging = firebase.messaging();
 
-navigator.serviceWorker.register('https://cansinator.github.io/turbomandados/turbomandados/firebase-messaging-sw.js')
+navigator.serviceWorker.register('https://cansinator.github.io/turbomandados/firebase-messaging-sw.js')
   .then((registration) => {
     messaging.useServiceWorker(registration);
   });
