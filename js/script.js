@@ -5,12 +5,6 @@ var config = {
 firebase.initializeApp(config);
 const messaging = firebase.messaging();
 
-navigator.serviceWorker.register('../turbomandados/firebase-messaging-sw.js')
-  .then((registration) => {
-    messaging.useServiceWorker(registration);
-  });
-
-  
 
 // Request for permission
 messaging.requestPermission()
@@ -22,6 +16,11 @@ messaging.requestPermission()
         if (currentToken) {
           console.log('Token: ' + currentToken)
           sendTokenToServer(currentToken);
+
+          navigator.serviceWorker.register('../turbomandados/firebase-messaging-sw.js')
+            .then((registration) => {
+              messaging.useServiceWorker(registration);
+            });
         } else {
           console.log('No Instance ID token available. Request permission to generate one.');
           setTokenSentToServer(false);
