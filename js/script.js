@@ -9,17 +9,14 @@ const messaging = firebase.messaging();
 messaging.requestPermission()
   .then(function () {
     console.log('Notification permission granted.');
-    // TODO(developer): Retrieve an Instance ID token for use with FCM.
+    navigator.serviceWorker.register('https://cansinator.github.io/turbomandados/firebase-messaging-sw.js')
+    .then((registration) => {
+      messaging.useServiceWorker(registration);
+    });
     messaging.getToken()
       .then(function (currentToken) {
         if (currentToken) {
-          console.log('Token: ' + currentToken)
-
-          navigator.serviceWorker.register('https://cansinator.github.io/turbomandados/firebase-messaging-sw.js')
-            .then((registration) => {
-              messaging.useServiceWorker(registration);
-            });
-
+          console.log('Token: ' + currentToken);
           sendTokenToServer(currentToken);
         } else {
           console.log('No Instance ID token available. Request permission to generate one.');
