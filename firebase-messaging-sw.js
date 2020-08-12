@@ -85,7 +85,7 @@ const APP_SHELL_INMUTABLE = [
   'fonts/font-awesome-4.7.0/less/stacked.less',
   'fonts/font-awesome-4.7.0/less/variables.less',
   'fonts/font-awesome-4.7.0/scss/font-awesome.scss',
-  'fonts/font-awesome-4.7.0/scss/_animated.scss',
+/*   'fonts/font-awesome-4.7.0/scss/_animated.scss',
   'fonts/font-awesome-4.7.0/scss/_bordered-pulled.scss',
   'fonts/font-awesome-4.7.0/scss/_core.scss',
   'fonts/font-awesome-4.7.0/scss/_fixed-width.scss',
@@ -97,7 +97,7 @@ const APP_SHELL_INMUTABLE = [
   'fonts/font-awesome-4.7.0/scss/_rotated-flipped.scss',
   'fonts/font-awesome-4.7.0/scss/_screen-reader.scss',
   'fonts/font-awesome-4.7.0/scss/_stacked.scss',
-  'fonts/font-awesome-4.7.0/scss/_variables.scss',
+  'fonts/font-awesome-4.7.0/scss/_variables.scss', */
   'js/jquery-3.3.1.min.js',
   'js/jquery-ui.min.js',
   'js/jquery.min.js',
