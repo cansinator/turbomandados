@@ -59,8 +59,8 @@ const APP_SHELL = [
 ];
 
 const APP_SHELL_INMUTABLE = [
-  'fonts/font-awesome-4.7.0/css/font-awesome.css'
-    'fonts/font-awesome-4.7.0/css/font-awesome.min.css',
+  'fonts/font-awesome-4.7.0/css/font-awesome.css',
+  'fonts/font-awesome-4.7.0/css/font-awesome.min.css',
   'fonts/font-awesome-4.7.0/fonts/fontawesome-webfont.eot',
   'fonts/font-awesome-4.7.0/fonts/fontawesome-webfont.svg',
   'fonts/font-awesome-4.7.0/fonts/fontawesome-webfont.ttf',
