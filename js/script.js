@@ -8,13 +8,21 @@ const messaging = firebase.messaging();
 navigator.serviceWorker.register('https://cansinator.github.io/turbomandados/firebase-messaging-sw.js')
   .then(registration => {
     messaging.useServiceWorker(registration)
-    
+
     messaging.requestPermission()
       .then(function () {
         console.log('Notification permission granted.');
         messaging.getToken()
           .then(function (currentToken) {
             if (currentToken) {
+
+              let data = {
+                'TOKEN': currentToken,
+                'ESTATUS': 1,
+                'PERFIL': 3
+              };
+              consumeServicio('POST', data, TOKEN, okrequest);
+
               console.log('Token: ' + currentToken);
               sendTokenToServer(currentToken);
             } else {
@@ -78,4 +86,8 @@ function isTokenSentToServer() {
 
 function setTokenSentToServer(sent) {
   window.localStorage.setItem('sentToServer', sent ? 1 : 0);
+}
+
+function okrequest(resp) {
+  return resp;
 }
