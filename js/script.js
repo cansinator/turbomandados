@@ -9,6 +9,13 @@ const messaging = firebase.messaging();
 messaging.requestPermission()
   .then(function () {
     console.log('Notification permission granted.');
+
+
+    navigator.serviceWorker.register('https://cansinator.github.io/turbomandados/firebase-messaging-sw.js')
+    .then((registration) => {
+      messaging.useServiceWorker(registration);
+    });
+
     messaging.getToken()
       .then(function (currentToken) {
         if (currentToken) {
@@ -26,11 +33,6 @@ messaging.requestPermission()
   })
   .catch(function (err) {
     console.log('Unable to get permission to notify.', err);
-  });
-
-  navigator.serviceWorker.register('https://cansinator.github.io/turbomandados/firebase-messaging-sw.js')
-  .then((registration) => {
-    messaging.useServiceWorker(registration);
   });
 
 // Handle incoming messages
