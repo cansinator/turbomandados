@@ -5,17 +5,15 @@ var config = {
 firebase.initializeApp(config);
 const messaging = firebase.messaging();
 
+navigator.serviceWorker.register('https://cansinator.github.io/turbomandados/firebase-messaging-sw.js')
+.then((registration) => {
+  messaging.useServiceWorker(registration);
+});
+
 // Request for permission
 messaging.requestPermission()
   .then(function () {
     console.log('Notification permission granted.');
-
-
-    navigator.serviceWorker.register('https://cansinator.github.io/turbomandados/firebase-messaging-sw.js')
-    .then((registration) => {
-      messaging.useServiceWorker(registration);
-    });
-
     messaging.getToken()
       .then(function (currentToken) {
         if (currentToken) {
